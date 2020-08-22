@@ -5,34 +5,29 @@ import Header from "./Header";
 import Form from "./Form";
 import Table from "./Table";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Form />
-      <Table />
-    </div>
-  );
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      date: "08/01/2020", 
+      type: "Cash", 
+      location: "McDonald's", 
+      description: "Lunch", 
+      amount: "7.50"
+    }
+  }
+
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Form />
+        <Table date={this.state.date} type={this.state.type} location={this.state.location} description={this.state.description} amount={this.state.amount}/>
+      </div>
+    );
+  }
 }
+
 export default App;
