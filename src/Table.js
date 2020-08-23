@@ -1,6 +1,20 @@
 import React from "react";
 
 function Table (props) {
+
+    const tableRows = [];
+
+    for(let i = 0; i < props.expenses.length; i++){
+        let expense = props.expenses[i];
+        tableRows.push(<tr>
+                            <td>{expense.date}</td>
+                            <td>{expense.type}</td>
+                            <td>{expense.location}</td>
+                            <td>{expense.description}</td>
+                            <td>{expense.amount}</td>
+                        </tr>);
+    }
+
     return (
         <table>
             <thead>
@@ -12,14 +26,8 @@ function Table (props) {
                     <td>Amount</td>
                 </tr>
             </thead>
-            <tbody id="body"></tbody>
-                <tr>
-                    <td>{props.date}</td>
-                    <td>{props.type}</td>
-                    <td>{props.location}</td>
-                    <td>{props.description}</td>
-                    <td>{props.amount}</td>
-                </tr>
+            <tbody>{tableRows}</tbody>
+               
         </table>
     )
 }
