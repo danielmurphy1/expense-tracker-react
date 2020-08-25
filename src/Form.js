@@ -35,7 +35,7 @@ function Form(props) {
                         <input type="number" name="amount" value={props.expenses.amount} onChange={props.handleChange}  min="1" step="0.01" required/>
                     </label>
                 </div>
-                <button id="submit" type="button" onClick={props.addExpense}>Add Expense</button>
+                <button id="submit" type="submit" onClick={props.addExpense} >Add Expense</button>
             </form>
     )
 }

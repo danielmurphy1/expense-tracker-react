@@ -25,20 +25,31 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  addExpense(){
-    console.log("Test")
-    this.setState(function(prevState){
-      return(
-      prevState.expenses.push({
-        date: this.state.expenses.date, 
-        type: this.state.expenses.type,
-        location: this.state.expenses.location, 
-        description: this.state.expenses.description, 
-        amount: this.state.expenses.amount
-      })
-      )
+  addExpense(event){
+    event.preventDefault();
+    // console.log("Test")
+    // this.setState(function(prevState){
+    //   return(
+    //   prevState.expenses.push({
+    //     date: this.state.date, 
+    //     type: this.state.type,
+    //     location: this.state.location, 
+    //     description: this.state.description, 
+    //     amount: this.state.amount
+    //   })
+    //   )
+    // })
+    // console.log(this.state.expenses)
+    let newExpense = {
+      date: this.state.date,
+      type: this.state.type, 
+      location: this.state.location,
+      description: this.state.description,
+      amount: this.state.amount
+    }
+    this.setState({
+      expenses: [...this.state.expenses, newExpense]
     })
-    console.log(this.state.expenses)
   }
 
   handleChange(event){
