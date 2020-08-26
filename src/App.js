@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       expenses: [
         {
+          id: Math.random(),
           date: "08/01/2020", 
           type: "Cash", 
           location: "McDonald's", 
@@ -23,6 +24,7 @@ class App extends React.Component {
     }
     this.addExpense = this.addExpense.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   addExpense(event){
@@ -41,6 +43,7 @@ class App extends React.Component {
     // })
     // console.log(this.state.expenses)
     let newExpense = {
+      id: Math.random(),
       date: this.state.date,
       type: this.state.type, 
       location: this.state.location,
@@ -50,6 +53,7 @@ class App extends React.Component {
     this.setState({
       expenses: [...this.state.expenses, newExpense]
     })
+    console.log(this.state.expenses)
   }
 
   handleChange(event){
@@ -60,12 +64,18 @@ class App extends React.Component {
     console.log(this.state)
   }
 
+  handleDelete(expenseID){
+    console.log("Delete Clicked")
+    const expenses = this.state.expenses.filter(expense => expense.id !==expenseID);
+    this.setState({expenses : expenses})
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
         <Form expenses={this.state.expenses} addExpense={this.addExpense} handleChange={this.handleChange}/>
-        <Table expenses={this.state.expenses}/>
+        <Table handleDelete={this.handleDelete} key={this.state.expenses.id} expenses={this.state.expenses}/>
       </div>
     );
   }

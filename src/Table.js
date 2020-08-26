@@ -12,6 +12,7 @@ function Table (props) {
                             <td>{expense.location}</td>
                             <td>{expense.description}</td>
                             <td>{expense.amount}</td>
+                            <td><button onClick={props.handleDelete}>Delete</button></td>
                         </tr>);
     }
 
