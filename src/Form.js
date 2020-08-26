@@ -2,15 +2,15 @@ import React from "react";
 
 function Form(props) {
     return (
-        <form id="form">
-                <div>
-                    <label>Date
-                        <input type="date" name="date" value={props.expenses.date} onChange={props.handleChange} required/>
+        <form className="d-flex justify-content-around flex-wrap">
+                <div className="form-group">
+                    <label>Date 
+                        <input className="form-control" type="date" name="date" value={props.expenses.date} onChange={props.handleChange} required/>
                     </label>
                 </div>
-                <div>
-                    <label>Type
-                        <select name="type" value={props.expenses.type} onChange={props.handleChange} required>
+                <div className="form-group">
+                    <label>Type 
+                        <select className="form-control" name="type" value={props.expenses.type} onChange={props.handleChange} required>
                             <option value="">--SelectType--</option>
                             <option value="cc">Credit Card</option>
                             <option value="cash">Cash</option>
@@ -20,22 +20,22 @@ function Form(props) {
                         </select>
                     </label>
                 </div>
-                <div>
-                    <label>Location
-                        <input type="text" name="location" value={props.expenses.location} onChange={props.handleChange} required/>
+                <div className="form-group">
+                    <label>Location 
+                        <input className="form-control" type="text" name="location" value={props.expenses.location} onChange={props.handleChange} required/>
                     </label>
                 </div>
-                <div>
-                    <label>Description of Expense
-                        <input type="text" name="description" value={props.expenses.description} onChange={props.handleChange} required/>
+                <div className="form-group">
+                    <label>Description of Expense 
+                        <input className="form-control" type="text" name="description" value={props.expenses.description} onChange={props.handleChange} required/>
                     </label>
                 </div>
-                <div>
-                    <label>Amount
-                        <input type="number" name="amount" value={props.expenses.amount} onChange={props.handleChange}  min="1" step="0.01" required/>
+                <div className="form-group">
+                    <label>Amount 
+                        <input className="form-control" type="number" name="amount" value={props.expenses.amount} onChange={props.handleChange}  min="1" step="0.01" required/>
                     </label>
                 </div>
-                <button id="submit" type="submit" onClick={props.addExpense} >Add Expense</button>
+                <button className="btn btn-secondary btn-sm"type="submit" onClick={props.addExpense} >Add Expense</button>
             </form>
     )
 }

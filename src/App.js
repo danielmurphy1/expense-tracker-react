@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from "./Header";
 import Form from "./Form";
@@ -29,19 +28,7 @@ class App extends React.Component {
 
   addExpense(event){
     event.preventDefault();
-    // console.log("Test")
-    // this.setState(function(prevState){
-    //   return(
-    //   prevState.expenses.push({
-    //     date: this.state.date, 
-    //     type: this.state.type,
-    //     location: this.state.location, 
-    //     description: this.state.description, 
-    //     amount: this.state.amount
-    //   })
-    //   )
-    // })
-    // console.log(this.state.expenses)
+   
     let newExpense = {
       id: Math.random(),
       date: this.state.date,
