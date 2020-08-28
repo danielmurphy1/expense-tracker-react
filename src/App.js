@@ -57,6 +57,17 @@ class App extends React.Component {
     this.setState({expenses : expenses})
   }
 
+  componentWillMount(){
+    localStorage.getItem("expenses") && this.setState({
+      expenses: JSON.parse(localStorage.getItem("expenses"))
+    })
+  }
+
+  componentWillUpdate(nextProps, nextState){
+    localStorage.setItem("expenses", JSON.stringify(nextState.expenses));
+    
+  }
+
   render() {
     return (
       <div className="App">
