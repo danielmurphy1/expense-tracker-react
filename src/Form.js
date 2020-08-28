@@ -2,7 +2,7 @@ import React from "react";
 
 function Form(props) {
     return (
-        <form className="d-flex justify-content-around flex-wrap">
+        <form onSubmit={props.addExpense} className="d-flex justify-content-around flex-wrap">
                 <div className="form-group">
                     <label>Date 
                         <input className="form-control" type="date" name="date" value={props.expenses.date} onChange={props.handleChange} required/>
@@ -12,11 +12,11 @@ function Form(props) {
                     <label>Type 
                         <select className="form-control" name="type" value={props.expenses.type} onChange={props.handleChange} required>
                             <option value="">--SelectType--</option>
-                            <option value="cc">Credit Card</option>
-                            <option value="cash">Cash</option>
-                            <option value="debit">Debit Card</option>
-                            <option value="electronic">Venmo, ApplePay, etc</option>
-                            <option value="check">Check</option>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Debit">Debit Card</option>
+                            <option value="Electronic">Electronic</option>
+                            <option value="Check">Check</option>
                         </select>
                     </label>
                 </div>
@@ -35,7 +35,7 @@ function Form(props) {
                         <input className="form-control" type="number" name="amount" value={props.expenses.amount} onChange={props.handleChange}  min="1" step="0.01" required/>
                     </label>
                 </div>
-                <button className="btn btn-secondary btn-sm"type="submit" onClick={props.addExpense} >Add Expense</button>
+                <button className="btn btn-secondary btn-sm"type="submit"  >Add Expense</button>
             </form>
     )
 }

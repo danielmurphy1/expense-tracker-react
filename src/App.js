@@ -12,11 +12,11 @@ class App extends React.Component {
       expenses: [
         {
           id: Math.random(),
-          date: "08/01/2020", 
-          type: "Cash", 
-          location: "McDonald's", 
-          description: "Lunch", 
-          amount: "7.50"
+          date: "", 
+          type: "", 
+          location: "", 
+          description: "", 
+          amount: ""
         }
         
       ]
