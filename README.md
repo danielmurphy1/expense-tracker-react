@@ -1,10 +1,10 @@
-# JavaScropt Expense Tracker Using React
+# JavaScript Expense Tracker Using React
 
 _Web Based Expense Tracker Using React and Bootstrap4_
 
 ## Instructions
 
----
+
 
 Fill out the details of each expense using the form and click the "Add Expense" button. To remove an expense, click the "Delete" button. Expenses are saved in local storage for use and tracking later. 
 
