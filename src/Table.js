@@ -30,7 +30,6 @@ function Table (props) {
                 </tr>
             </thead>
             <tbody>{tableRows}</tbody>
-               
         </table>
     )
 }

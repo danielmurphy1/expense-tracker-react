@@ -40,7 +40,6 @@ class App extends React.Component {
     this.setState({
       expenses: [...this.state.expenses, newExpense]
     })
-    console.log(this.state.expenses)
   }
 
   handleChange(event){
@@ -48,7 +47,6 @@ class App extends React.Component {
     this.setState({
       [name] : value
     })
-    console.log(this.state)
   }
 
   handleDelete(expenseID){
@@ -57,7 +55,7 @@ class App extends React.Component {
     this.setState({expenses : expenses})
   }
 
-  componentWillMount(){
+  componentDidMount(){
     localStorage.getItem("expenses") && this.setState({
       expenses: JSON.parse(localStorage.getItem("expenses"))
     })
