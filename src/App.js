@@ -55,9 +55,9 @@ class App extends React.Component {
     })
   }
 
-  componentWillUpdate(nextProps, nextState){
-    localStorage.setItem("expenses", JSON.stringify(nextState.expenses));
-  }
+  componentDidUpdate() {
+    localStorage.setItem('expenses', JSON.stringify(this.state.expenses));
+}
 
   render() {
     return (
