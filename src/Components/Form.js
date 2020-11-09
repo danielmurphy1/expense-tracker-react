@@ -5,12 +5,12 @@ function Form(props) {
         <form onSubmit={props.addExpense} className="d-flex justify-content-around flex-wrap">
                 <div className="form-group">
                     <label>Date 
-                        <input className="form-control" type="date" name="date" value={props.expenses.date} onChange={props.handleChange} required/>
+                        <input className="form-control" type="date" name="date" value={props.state.date} onChange={props.handleChange} required/>
                     </label>
                 </div>
                 <div className="form-group">
                     <label>Type 
-                        <select className="form-control" name="type" value={props.expenses.type} onChange={props.handleChange} required>
+                        <select className="form-control" name="type" value={props.state.type} onChange={props.handleChange} required>
                             <option value="">--SelectType--</option>
                             <option value="Credit Card">Credit Card</option>
                             <option value="Cash">Cash</option>
@@ -22,17 +22,17 @@ function Form(props) {
                 </div>
                 <div className="form-group">
                     <label>Location 
-                        <input className="form-control" type="text" name="location" value={props.expenses.location} onChange={props.handleChange} required/>
+                        <input className="form-control" type="text" name="location" value={props.state.location} onChange={props.handleChange} required/>
                     </label>
                 </div>
                 <div className="form-group">
                     <label>Description of Expense 
-                        <input className="form-control" type="text" name="description" value={props.expenses.description} onChange={props.handleChange} required/>
+                        <input className="form-control" type="text" name="description" value={props.state.description} onChange={props.handleChange} required/>
                     </label>
                 </div>
                 <div className="form-group">
                     <label>Amount 
-                        <input className="form-control" type="number" name="amount" value={props.expenses.amount} onChange={props.handleChange}  min="1" step="0.01" required/>
+                        <input className="form-control" type="number" name="amount" value={props.state.amount} onChange={props.handleChange}  min="1" step="0.01" required/>
                     </label>
                 </div>
                 <button className="btn btn-secondary btn-sm"type="submit"  >Add Expense</button>

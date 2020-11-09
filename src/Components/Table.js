@@ -4,8 +4,7 @@ function Table (props) {
 
     const tableRows = [];
 
-        //set i = 1 so that the initial empty string state is not added to the array/table
-    for(let i = 1; i < props.expenses.length; i++){
+    for(let i = 0; i < props.expenses.length; i++){
         let expense = props.expenses[i];
         tableRows.push(<tr key={expense.id}>
                             <td>{expense.date}</td>
@@ -33,6 +32,5 @@ function Table (props) {
         </table>
     )
 }
-
 
 export default Table;

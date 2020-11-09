@@ -1,25 +1,15 @@
 import React from 'react';
 import './App.css';
-import Header from "./Header";
-import Form from "./Form";
-import Table from "./Table";
+import Header from "./Components/Header";
+import Form from "./Components/Form";
+import Table from "./Components/Table";
 
 
 class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      expenses: [
-        {
-          id: Math.random(),
-          date: "", 
-          type: "", 
-          location: "", 
-          description: "", 
-          amount: ""
-        }
-        
-      ]
+      expenses: []
     }
     this.addExpense = this.addExpense.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -28,7 +18,7 @@ class App extends React.Component {
 
   addExpense(event){
     event.preventDefault();
-   
+
     let newExpense = {
       id: Math.random(),
       date: this.state.date,
@@ -38,7 +28,12 @@ class App extends React.Component {
       amount: this.state.amount
     }
     this.setState({
-      expenses: [...this.state.expenses, newExpense]
+      expenses: this.state.expenses.length >= 1 ? [...this.state.expenses, newExpense] : [newExpense],
+      date: "",
+      type: "", 
+      location: "", 
+      description: "", 
+      amount: ""
     })
   }
 
@@ -50,7 +45,6 @@ class App extends React.Component {
   }
 
   handleDelete(expenseID){
-    console.log("Delete Clicked")
     const expenses = this.state.expenses.filter(expense => expense.id !==expenseID);
     this.setState({expenses : expenses})
   }
@@ -63,14 +57,13 @@ class App extends React.Component {
 
   componentWillUpdate(nextProps, nextState){
     localStorage.setItem("expenses", JSON.stringify(nextState.expenses));
-    
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Form expenses={this.state.expenses} addExpense={this.addExpense} handleChange={this.handleChange}/>
+        <Form state={this.state} addExpense={this.addExpense} handleChange={this.handleChange}/>
         <Table handleDelete={this.handleDelete} key={this.state.expenses.id} expenses={this.state.expenses}/>
       </div>
     );
