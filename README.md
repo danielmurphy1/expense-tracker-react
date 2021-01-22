@@ -2,22 +2,21 @@
 
 _Web Based Expense Tracker Using React and Bootstrap4_
 
+![ExpenseApp Screenshot](https://github.com/danielmurphy1/expense-tracker-react/blob/master/expense-tracker-react-screenshot.JPG)
+
+
+Access the app [here](https://afternoon-sands-59834.herokuapp.com/)
+
 ## Instructions
 
 To Download and Run Locally
-___
+
 1. Clone Code Locally from GitHub
 2. CD into project directory
 3. Run "npm install" (or "npm i") in terminal to install packages and dependencies
 4. Run "npm run start" in terminal to start application locally 
 
 Fill out the details of each expense using the form and click the "Add Expense" button. To remove an expense, click the "Delete" button. Expenses are saved in local storage for use and tracking later. 
-
-
-Access the app [here](https://afternoon-sands-59834.herokuapp.com/)
-
-![ExpenseApp Screenshot](https://github.com/danielmurphy1/expense-tracker-react/blob/master/expense-tracker-react-screenshot.JPG)
-
 ### Summary
 
 I created this application to learn how to use React. Previously, I had created a similar expense tracker using HTML and vanilla JavaScript (You can access my previous app [here](https://danielmurphy1.github.io/ExpenseTracker/)).
